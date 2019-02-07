@@ -1,0 +1,14 @@
+Create a new volume group:
+
+Create the logical volumes:
+
+Make two xfs filessystmes:
+
+Mount the new filesystems to temporary mount points:
+
+copy the existing contents from the old disk to the new filesystems:
+
+mount the new logical volumes where they belong and update /etc/fstab so they are remounted there on reboot:
+
+At this point, have you actually freed up the disk blocks in the original filesystem?  If not, how can you free this no-longer-used storage in the root filesystem?
+	No, i have not freed up disk blocks on the original filesystem as the contents of the original /home/ and /tmp/ directories were never deleted and are still there just inaccessible. To free up this no longer used storage space in the root filesystem I can simply unmount the logical volumes to access the original directories and delete thier conents, then remount the logical volumes and the space should be clear now.
