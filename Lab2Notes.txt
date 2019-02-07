@@ -4,9 +4,8 @@ Create a new volume group;
 -create the new volume group "vg_new" built up of the phsyical volume I initialized:
 	-vgcreate vg_new /dev/sdb
 Create the logical volumes:
--created the logical volume "lv_home" for home root directory with size of 4GB:
+-created the logical volume "lv_home" and "lv_tmp" for home and tmp root directory with size of 4GB and 1GB, respectively:
 	-lvcreate -n lv_home --size 4g vg_new
--created the logical volume "lv_tmp" for tmp root directory with size of 1GB:
 	-lvcreate -n lv_tmp --size 1g vg_new
 Make two xfs filessystmes:
 -make the xfs filesystem for "lv_home" and "lv_tmp" logical volume:
